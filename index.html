@@ -36,132 +36,197 @@
 		}
 		*/
 		.certificate-card {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.4s, box-shadow 0.4s;
-    background: #fff;
-    padding: 20px;
-}
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			min-height: 440px; /* Adjust as needed for your content */
+			height: 100%;
+			width: 100%;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+			transition: transform 0.4s, box-shadow 0.4s;
+			background: #f5efd9;
+			padding: 20px;
+		}
 
-.certificate-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-}
+		.certificate-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+		}
 
-.certificate-img-container {
-    height: 220px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
+		.certificate-img-container {
+			height: 220px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 10px;
+			position: relative;
+			overflow: hidden;
+			border-radius: 8px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			cursor: pointer;
+		}
 
-.certificate-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: blur(2px) brightness(0.9);
-}
+		.certificate-img-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s ease, filter 0.5s ease;
+			filter: blur(2px) brightness(0.9);
+		}
 
-.certificate-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-    transition: .5s ease;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+		.certificate-overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			opacity: 1;
+			transition: .5s ease;
+			background: rgba(0, 0, 0, 0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-.certificate-img-container:hover img {
-    transform: scale(1.08);
-    filter: blur(0) brightness(1);
-}
+		.certificate-img-container:hover img {
+			transform: scale(1.08);
+			filter: blur(0) brightness(1);
+		}
 
-.certificate-img-container:hover .certificate-overlay {
-    background: rgba(0, 0, 0, 0.7);
-}
+		.certificate-img-container:hover .certificate-overlay {
+			background: rgba(0, 0, 0, 0.7);
+		}
 
-.certificate-text {
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: 0.3s;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-}
+		.certificate-text {
+			color: white;
+			font-size: 16px;
+			padding: 10px 20px;
+			border: 2px solid white;
+			border-radius: 5px;
+			transition: 0.3s;
+			text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+		}
 
-.certificate-text:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
+		.certificate-text:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+			transform: scale(1.05);
+		}
 
-.modal-certificate {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-    animation: fadeIn 0.3s;
-}
+		.certificate-card p, .certificate-card h3 {
+			color: #3a3732;
+		}
 
-@keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
-}
+		.certificate-card p {
+			margin-top: 12px;
+			min-height: 40px; /* Ensures all descriptions align */
+			text-align: center;
+		}
 
-.modal-content {
-    margin: auto;
-    display: block;
-    width: auto;
-    max-width: 800px;
-    height: auto;
-    max-height: 80vh;
-    animation: zoomIn 0.5s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    border: 2px solid #f1f1f1;
-    /* Standard certificate aspect ratio approximation */
-    aspect-ratio: 4/3;
-    object-fit: contain;
-}
+		.certificate-card h3 {
+			min-height: 64px; /* Ensures all headings take at least 2 lines of space */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
 
-@keyframes zoomIn {
-    from {transform: scale(0.8); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-}
+		.modal-certificate {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			padding-top: 50px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0,0,0,0.9);
+			animation: fadeIn 0.3s;
+		}
 
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+		@keyframes fadeIn {
+			from {opacity: 0}
+			to {opacity: 1}
+		}
 
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-    transform: rotate(90deg);
-}
+		.modal-content {
+			margin: auto;
+			display: block;
+			width: auto;
+			max-width: 800px;
+			height: auto;
+			max-height: 80vh;
+			animation: zoomIn 0.5s;
+			box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+			border: 2px solid #f1f1f1;
+			/* Standard certificate aspect ratio approximation */
+			aspect-ratio: 4/3;
+			object-fit: contain;
+		}
+
+		@keyframes zoomIn {
+			from {transform: scale(0.8); opacity: 0;}
+			to {transform: scale(1); opacity: 1;}
+		}
+
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition: 0.3s;
+		}
+
+		.close:hover, .close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+			transform: rotate(90deg);
+		}
+
+		/* Card style for Projects & Volunteering sections */
+		.projects-cards-row, .volunteer-cards-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 32px;
+			margin-top: 32px;
+		}
+		.project-card, .volunteer-card {
+			background: #f5efd9; /* subtle shade of #ede5cb */
+			border-radius: 16px;
+			box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+			padding: 32px 24px;
+			width: 100%;
+			max-width: 370px;
+			min-height: 220px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: box-shadow 0.3s, transform 0.3s;
+		}
+		.project-card:hover, .volunteer-card:hover {
+			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+			transform: translateY(-6px) scale(1.03);
+		}
+		.project-card h3, .volunteer-card h3 {
+			margin-bottom: 18px;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+		.project-card p, .volunteer-card p {
+			color: #3a3732;
+			font-size: 1.08rem;
+			text-align: center;
+		}
 	</style>
 </head>
 <body data-offset="300" data-spy="scroll" data-target=".site-navbar-target">
@@ -1019,131 +1084,35 @@
 <!-- Improved CSS with better animations -->
 <style>
 .certificate-card {
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.4s, box-shadow 0.4s;
-    background: #fff;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 440px; /* Adjust as needed for your content */
+    height: 100%;
 }
 
-.certificate-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+.certificate-card h3 {
+    min-height: 64px; /* Ensures all headings take at least 2 lines of space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .certificate-img-container {
     height: 220px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-
-.certificate-img-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease, filter 0.5s ease;
-    filter: blur(2px) brightness(0.9);
-}
-
-.certificate-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-    transition: .5s ease;
-    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
-.certificate-img-container:hover img {
-    transform: scale(1.08);
-    filter: blur(0) brightness(1);
-}
-
-.certificate-img-container:hover .certificate-overlay {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.certificate-text {
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 5px;
-    transition: 0.3s;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-}
-
-.certificate-text:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
-.modal-certificate {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-    animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0}
-    to {opacity: 1}
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: auto;
-    max-width: 800px;
-    height: auto;
-    max-height: 80vh;
-    animation: zoomIn 0.5s;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    border: 2px solid #f1f1f1;
-    /* Standard certificate aspect ratio approximation */
-    aspect-ratio: 4/3;
-    object-fit: contain;
-}
-
-@keyframes zoomIn {
-    from {transform: scale(0.8); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover, .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-    transform: rotate(90deg);
+.certificate-card p {
+    margin-top: 12px;
+    min-height: 40px; /* Ensures all descriptions align */
+    text-align: center;
 }
 </style>
 
@@ -1223,71 +1192,49 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="row justify-content-center py-5 mt-5">
 <div class="col-md-12 heading-section text-center ftco-animate">
 <h1 class="big big-2">Volunteering & Event Participation</h1>
-
 <h2 class="mb-4">Volunteering & Event Participation</h2>
-
 <p>Throughout my academic journey, I have actively engaged in organizing and participating in a variety of school and college events. These experiences have been instrumental in developing my leadership, teamwork, and event management skills. I believe in contributing to a vibrant campus life and learning through hands-on involvement.</p>
 </div>
 </div>
-
-<div class="row">
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">College Event Management</a></h3>
-<p class="services-1 shadow">Played a key role in the college's National Youth Event, contributing to its planning and execution. This involved coordinating with various teams, managing logistics, and ensuring a smooth experience for participants. This opportunity enhanced my organizational abilities and understanding of large-scale event dynamics.</p>
-</div>
-</div>
-
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">School Event Participation</a></h3>
-<p class="services-1 shadow">Actively participated in numerous school events, including Annual Day celebrations and Independence Day (15th August) programs. My involvement ranged from performing to assisting in backstage management, fostering a spirit of collaboration and cultural engagement from an early age.</p>
-</div>
-</div>
-
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">Extracurricular Activities</a></h3>
-<p class="services-1 shadow">Consistently involved in extracurricular activities such as debate competitions, singing, and hosting open mic sessions during school. These activities helped in honing my public speaking, creative expression, and interpersonal skills, contributing to a well-rounded personal development.</p>
-</div>
-</div>
+<div class="volunteer-cards-row">
+  <div class="volunteer-card">
+    <h3>College Event Management</h3>
+    <p>Played a key role in the college's National Youth Event, contributing to its planning and execution. This involved coordinating with various teams, managing logistics, and ensuring a smooth experience for participants. This opportunity enhanced my organizational abilities and understanding of large-scale event dynamics.</p>
+  </div>
+  <div class="volunteer-card">
+    <h3>School Event Participation</h3>
+    <p>Actively participated in numerous school events, including Annual Day celebrations and Independence Day (15th August) programs. My involvement ranged from performing to assisting in backstage management, fostering a spirit of collaboration and cultural engagement from an early age.</p>
+  </div>
+  <div class="volunteer-card">
+    <h3>Extracurricular Activities</h3>
+    <p>Consistently involved in extracurricular activities such as debate competitions, singing, and hosting open mic sessions during school. These activities helped in honing my public speaking, creative expression, and interpersonal skills, contributing to a well-rounded personal development.</p>
+  </div>
 </div>
 </div>
 </section>
 
-<section class="ftco-section" id="projects-section"> <!-- Changed ID and Title -->
+<section class="ftco-section" id="projects-section">
 <div class="container-fluid px-md-5">
 <div class="row justify-content-center py-5 mt-5">
 <div class="col-md-12 heading-section text-center ftco-animate">
-<h1 class="big big-2">Projects & Achievements</h1> <!-- Changed Title -->
-
-<h2 class="mb-4">Projects & Achievements</h2> <!-- Changed Title -->
-
+<h1 class="big big-2">Projects & Achievements</h1>
+<h2 class="mb-4">Projects & Achievements</h2>
 <p>Beyond academics and work experience, I dedicate time to personal projects and skill development. My focus is on practical application of technology, particularly in automation, mobile development, and data analysis. I also enjoy helping others, such as assisting my brother with his YouTube anime content channel by advising on voice clarity and content scripting.</p>
 </div>
 </div>
-
-<div class="row">
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">IoT Project Ideas</a></h3>
-<p class="services-1 shadow">Brainstormed and documented IoT-based projects like a Smart Home Device Control System and a Hospital Bed Monitoring System using Arduino, focusing on real-time updates and remote access to solve impactful problems.</p>
-</div>
-</div>
-
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">Mental Wellness & Peer Support</a></h3>
-<p class="services-1 shadow">Actively engaged in supporting peers with mental wellness, offering a listening ear and guidance. Facilitated informal sessions on mental health awareness within college. Deepened understanding of human psychology through self-study of works like "The Laws of Human Nature" and "The Emotional Intelligence"</p>
-</div>
-</div>
-
-<div class="col-md-4 text-center d-flex ftco-animate">
-<div class="desc">
-<h3 class="mb-5"><a class="services-1 shadow">YouTube Channel Support</a></h3>
-<p class="services-1 shadow">Assist my brother with his YouTube anime content channel, focusing on improving voice clarity, video narration, content scripting, and vocal tone to enhance viewer engagement.</p>
-</div>
-</div>
+<div class="projects-cards-row">
+  <div class="project-card">
+    <h3>IoT Project Ideas</h3>
+    <p>Brainstormed and documented IoT-based projects like a Smart Home Device Control System and a Hospital Bed Monitoring System using Arduino, focusing on real-time updates and remote access to solve impactful problems.</p>
+  </div>
+  <div class="project-card">
+    <h3>Mental Wellness & Peer Support</h3>
+    <p>Actively engaged in supporting peers with mental wellness, offering a listening ear and guidance. Facilitated informal sessions on mental health awareness within college. Deepened understanding of human psychology through self-study of works like "The Laws of Human Nature" and "The Emotional Intelligence"</p>
+  </div>
+  <div class="project-card">
+    <h3>YouTube Channel Support</h3>
+    <p>Assist my brother with his YouTube anime content channel, focusing on improving voice clarity, video narration, content scripting, and vocal tone to enhance viewer engagement.</p>
+  </div>
 </div>
 </div>
 </section>
@@ -1347,6 +1294,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <h3 class="mb-4">linkedin</h3>
 
 <p><a href="https://www.linkedin.com/in/rishabharaj-sharma-57a7a8256" target="_blank">linkedin.com/in/rishabharaj-sharma</a></p>
+</div>
 </div>
 </div>
 </div>

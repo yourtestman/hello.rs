@@ -1,18 +1,43 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 	<title>Rishabharaj Sharma</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-	<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
-	<link href="css/animate.css" rel="stylesheet">
-	<link href="css/owl.carousel.min.css" rel="stylesheet">
-	<link href="css/owl.theme.default.min.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/aos.css" rel="stylesheet">
-	<link href="css/ionicons.min.css" rel="stylesheet">
-	<link href="css/flaticon.css" rel="stylesheet">
-	<link href="css/icomoon.css" rel="stylesheet">
+	<!-- Preconnect to external domains -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com"  crossorigin>
+	<!-- Critical CSS for initial rendering -->
+	<link rel="preload" href="css/style.css" as="style">
 	<link href="css/style.css" rel="stylesheet">
-	<link href="css/font-awesome.css" rel="stylesheet"><!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4CS5V71Y2"></script><script>
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" as="style">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="preload" href="css/open-iconic-bootstrap.min.css" as="style">
+	<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Non-critical CSS loaded asynchronously -->
+	<link href="css/animate.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/owl.theme.default.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/magnific-popup.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/ionicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/flaticon.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/icomoon.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/custom-progress.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link href="css/font-awesome.css" rel="stylesheet" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/owl.carousel.min.css" rel="stylesheet">
+		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+		<link href="css/magnific-popup.css" rel="stylesheet">
+		<link href="css/aos.css" rel="stylesheet">
+		<link href="css/ionicons.min.css" rel="stylesheet">
+		<link href="css/flaticon.css" rel="stylesheet">
+		<link href="css/icomoon.css" rel="stylesheet">
+		<link href="css/custom-progress.css" rel="stylesheet">
+		<link href="css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	</noscript><!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4CS5V71Y2"></script><script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
@@ -193,36 +218,289 @@
 		}
 
 		/* Card style for Projects & Volunteering sections */
-		.projects-cards-row, .volunteer-cards-row {
+		.projects-cards-row, .volunteer-cards-row, .achievements-cards-row {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			gap: 32px;
+			gap: 20px; /* Reduced from 32px to 20px to accommodate more cards in a row */
 			margin-top: 32px;
 		}
-		.project-card, .volunteer-card {
+		
+		.volunteer-card {
 			background: #f5efd9; /* subtle shade of #ede5cb */
 			border-radius: 16px;
 			box-shadow: 0 6px 24px rgba(0,0,0,0.10);
 			padding: 32px 24px;
 			width: 100%;
-			max-width: 370px;
+			max-width: 400px; /* Changed from 370px to 300px to fit 3 in a row */
 			min-height: 220px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			transition: box-shadow 0.3s, transform 0.3s;
 		}
-		.project-card:hover, .volunteer-card:hover {
+		
+		.volunteer-card:hover {
 			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
 			transform: translateY(-6px) scale(1.03);
 		}
-		.project-card h3, .volunteer-card h3 {
+		
+		.volunteer-card h3 {
 			margin-bottom: 18px;
 			font-size: 1.5rem;
 			font-weight: 600;
 		}
-		.project-card p, .volunteer-card p {
+		
+		.volunteer-card p {
+			color: #3a3732;
+			font-size: 1.08rem;
+			text-align: center;
+		}
+		
+		/* Achievement Cards Styles for Projects & Achievements section */
+		.achievements-card {
+			background: #f5efd9;
+			border-radius: 16px;
+			box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+			padding: 32px 24px;
+			width: 100%;
+			max-width: 400px; 
+			min-height: 220px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: box-shadow 0.3s, transform 0.3s;
+			margin: 10px;
+		}
+		
+		.achievements-card:hover {
+			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+			transform: translateY(-6px) scale(1.02);
+		}
+		
+		.achievements-card h3 {
+			margin-bottom: 18px;
+			font-size: 1.5rem;
+			font-weight: 600;
+			text-align: center;
+		}
+		
+		.achievements-card p {
+			color: #3a3732;
+			font-size: 1.08rem;
+			text-align: center;
+		}
+		
+		/* Project Card New Styles - For main projects section only */
+		.projects-section .project-card {
+			background: #f5efd9;
+			border-radius: 16px;
+			box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+			width: 100%;
+			max-width: 350px; /* Changed from 370px to 300px to fit 3 in a row */
+			height: 350px;
+			position: relative;
+			overflow: hidden;
+			transition: transform 0.4s, box-shadow 0.4s;
+			cursor: pointer;
+		}
+		
+		.projects-section .project-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+		}
+		
+		.projects-section .project-card h3 {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.7);
+			color: white;
+			padding: 15px;
+			margin: 0;
+			z-index: 2;
+			text-align: center;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+		
+		.project-card-link {
+			display: block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+			color: inherit;
+		}
+		
+		.project-card-link:hover {
+			color: inherit;
+			text-decoration: none;
+		}
+		
+		.project-img-container {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+		
+		.project-img-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s ease, filter 0.5s ease;
+			filter: blur(2px) brightness(0.85);
+		}
+		
+		.projects-section .project-card:hover .project-img-container img {
+			transform: scale(1.08);
+			filter: blur(0) brightness(1);
+		}
+		
+		.project-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, 0.4);
+			transition: .5s ease;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+		}
+		
+		.projects-section .project-card:hover .project-overlay {
+			background: rgba(0, 0, 0, 0.7);
+		}
+		
+		.projects-section .project-overlay h3 {
+			background: transparent;
+			position: relative;
+			margin-bottom: 15px;
+		}
+		
+		.projects-section .project-overlay p {
+			color: white;
+			text-align: center;
+			margin-bottom: 20px;
+			font-size: 1.1rem;
+		}
+		
+		.project-text {
+			color: white;
+			font-size: 18px;
+			padding: 12px 24px;
+			border: 2px solid white;
+			border-radius: 5px;
+			transition: 0.3s;
+			text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		
+		.projects-section .project-card:hover .project-text {
+			opacity: 1;
+			transform: translateY(0);
+			background-color: rgba(255, 255, 255, 0.2);
+		}
+		
+		.projects-section .project-footer {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.7);
+			padding: 10px;
+			text-align: center;
+			z-index: 2;
+		}
+		
+		/* Original Project Card Styles for second projects section */
+		#projects-section:not(.projects-section) .project-card {
+			background: #f5efd9;
+			border-radius: 16px;
+			box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+			padding: 32px 24px;
+			width: 100%;
+			max-width: 300px; /* Changed from 370px to 300px to fit 3 in a row */
+			min-height: 220px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: box-shadow 0.3s, transform 0.3s;
+		}
+		
+		/* Contact Section Icon Styles */
+		.contact-section .icon {
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background: #223a7a;
+			margin-bottom: 15px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+		}
+		
+		.contact-section .icon:hover {
+			transform: translateY(-5px) !important;
+			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+			background: #2948a1 !important;
+		}
+		
+		/* Make sure hover effect works for all contact icons */
+		.contact-section .align-self-stretch .icon:hover {
+			transform: translateY(-5px) !important;
+			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2) !important;
+			background: #2948a1 !important;
+		}
+		
+		.contact-section .icon span,
+		.contact-section .icon i {
+			font-size: 32px;
+			color: #f5efd9;
+		}
+		
+		/* Ensure discord icon has the same hover effect */
+		.contact-section .icon i.fab.fa-discord {
+			font-size: 32px;
+			color: #f5efd9;
+		}
+		
+		.contact-section .box p {
+			font-size: 0;
+			height: 0;
+			margin: 0;
+			padding: 0;
+			line-height: 0;
+		}
+		
+		.contact-section .box p a {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+		
+		#projects-section:not(.projects-section) .project-card:hover {
+			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+			transform: translateY(-6px) scale(1.03);
+		}
+		
+		#projects-section:not(.projects-section) .project-card h3 {
+			margin-bottom: 18px;
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+		
+		#projects-section:not(.projects-section) .project-card p {
 			color: #3a3732;
 			font-size: 1.08rem;
 			text-align: center;
@@ -239,6 +517,7 @@
     <li class="nav-item"><a class="nav-link" href="#experience-section"><span>Experience</span></a></li>
     <li class="nav-item"><a class="nav-link" href="#education-section"><span>Education</span></a></li>
     <li class="nav-item"><a class="nav-link" href="#skills-section"><span>Skills</span></a></li>
+    <li class="nav-item"><a class="nav-link" href="#projects-section"><span>Projects</span></a></li>
     <li class="nav-item"><a class="nav-link" href="#certificates-section"><span>Certificates</span></a></li>
     <li class="nav-item"><a class="nav-link" href="#volunteering-acts-section"><span>Volunteering Acts</span></a></li>
     <li class="nav-item"><a class="nav-link" href="#contact-section"><span>Contact</span></a></li>
@@ -288,7 +567,7 @@
     <li class="d-flex"><span>Date of birth:</span> <span>August 30, 2003</span></li>
     <li class="d-flex"><span>Address:</span> <span>Indore, India</span></li>
     <li class="d-flex"><span>Email:</span> <span><a href="mailto:rishabharaj4you@gmail.com">rishabharaj4you@gmail.com</a></span></li>
-    <li class="d-flex"><span>Phone: </span> <span><a href="tel://123456789">123456789</a></span></li>
+    
 </ul>
 
 <div class="text">
@@ -452,7 +731,6 @@
 <section class="ftco-section ftco-no-pb goto-here" id="skills-section">
 <div class="col-md-12 heading-section ftco-animate text-center">
 <h1 class="col-md-12 big">Skills</h1>
-
 <h2 class="col-md-12 mb-4">Skills</h2>
 </div>
 
@@ -462,11 +740,11 @@
 <nav id="navi">
 <ul>
     <li><a href="#softskills">Soft Skills</a></li>
-	<li><a href="#principles">Software Designs</a></li>
-	<li><a href="#frontend">Frontend</a></li>
-	<li><a href="#backend">Backend</a></li>
-	<li><a href="#database">Database</a></li>
-    <li><a href="#techskills">Langauge & others</a></li>
+    <li><a href="#principles">Software Designs</a></li>
+    <li><a href="#frontend">Frontend Skills</a></li>
+    <li><a href="#backend">Backend Skills</a></li>
+    <li><a href="#database">Database Skills</a></li>
+    <li><a href="#techskills">Language & others</a></li>
     <li><a href="#devconcepts">Dev Concepts & Tools</a></li>
     <li><a href="#linuxskills">Linux & Networking</a></li>
 </ul>
@@ -474,96 +752,78 @@
 </div>
 
 <div class="col-md-9">
-
-
 <div class="page one resume-wrap" id="softskills">
     <h2 class="heading">Soft Skills</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Problem-Solving</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-1" role="progressbar" style="width:90%"><span>90%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Problem-Solving</h2>
+                <div class="skill-icon-container">
+                  
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Communication</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-2" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Communication</h2>
+                <div class="skill-icon-container">
+
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Self-Discipline & Focus</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-3" role="progressbar" style="width:90%"><span>90%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Self-Discipline & Focus</h2>
+                <div class="skill-icon-container">
+                
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Software Engineering skill </h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-4" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Software Engineering skill</h2>
+                <div class="skill-icon-container">
+             
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Event Management & Hosting</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-5" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Event Management</h2>
+                <div class="skill-icon-container">
+                   
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Adaptability & Flexibility</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-6" role="progressbar" style="width:90%"><span>90%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Adaptability & Flexibility</h2>
+                <div class="skill-icon-container">
+                
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Team Work</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="progress-bar color-1" role="progressbar" style="width:95%"><span>95%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Team Work</h2>
+                <div class="skill-icon-container">
+                    
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Leadership</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="progress-bar color-2" role="progressbar" style="width:95%"><span>95%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Leadership</h2>
+                <div class="skill-icon-container">
+                 
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Open-source Contributions</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-3" role="progressbar" style="width:85%"><span>85%</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Time Management</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-4" role="progressbar" style="width:85%"><span>85%</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Emotional Intelligence</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="progress-bar color-5" role="progressbar" style="width:95%"><span>95%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Open-source Contributions</h2>
+                <div class="skill-icon-container">
+                    
                 </div>
             </div>
         </div>
@@ -572,60 +832,60 @@
 
 <div class="page two resume-wrap" id="principles">
     <h2 class="heading">Software Designs</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Object-oriented Programming</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-1" role="progressbar" style="width:90%"><span>90%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Object-oriented Programming</h2>
+                <div class="skill-icon-container">
+                 
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>SOLID</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-2" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">SOLID</h2>
+                <div class="skill-icon-container">
+            
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Design Patterns</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar color-3" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Design Patterns</h2>
+                <div class="skill-icon-container">
+                   
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Domain-driven Design</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar color-4" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Domain-driven Design</h2>
+                <div class="skill-icon-container">
+                
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Onion Architecture</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="70" class="progress-bar color-5" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Onion Architecture</h2>
+                <div class="skill-icon-container">
+            
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Test-driven Development</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-6" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Test-driven Development</h2>
+                <div class="skill-icon-container">
+                
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Git</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="progress-bar color-3" role="progressbar" style="width:95%"><span>95%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Git</h2>
+                <div class="skill-icon-container">
+                 
                 </div>
             </div>
         </div>
@@ -634,123 +894,163 @@
 
 <div class="page three resume-wrap" id="frontend">
     <h2 class="heading">Frontend Skills</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>JavaScript</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-1" role="progressbar" style="width:85%"><span>85%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="skills-box rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">JavaScript</h2>
+                <div class="skill-icon-container">
+                  
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>TypeScript</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-2" role="progressbar" style="width:90%"><span>90%</span></div>
+      
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">HTML</h2>
+                <div class="progress mx-auto" data-value="92">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">92<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>HTML</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-3" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">CSS</h2>
+                <div class="progress mx-auto" data-value="88">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">88<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>CSS</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="50" class="progress-bar color-4" role="progressbar" style="width:50%"><span>50%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Bootstrap</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                     
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Bootstrap</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="30" class="progress-bar color-5" role="progressbar" style="width:30%"><span>30%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">React</h2>
+                <div class="progress mx-auto" data-value="70">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Angular</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="85" class="progress-bar color-6" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Wordpress</h2>
+                <div class="progress mx-auto" data-value="65">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Wordpress</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="80" class="progress-bar color-4" role="progressbar" style="width:80%"><span>80%</span></div>
-                </div>
-            </div>
-        </div>
-        
     </div>
 </div>
 
 <div class="page four resume-wrap" id="backend">
     <h2 class="heading">Backend Skills</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>C#</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-1" role="progressbar" style="width:90%"><span>90%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">C#</h2>
+                <div class="progress mx-auto" data-value="78">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Java</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-2" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Java</h2>
+                <div class="progress mx-auto" data-value="75">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Python</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-3" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Python</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>PHP</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="30" class="progress-bar color-4" role="progressbar" style="width:30%"><span>30%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">PHP</h2>
+                <div class="progress mx-auto" data-value="68">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Docker</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="50" class="progress-bar color-5" role="progressbar" style="width:50%"><span>50%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Docker</h2>
+                <div class="progress mx-auto" data-value="70">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Redis</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="80" class="progress-bar color-6" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Redis</h2>
+                <div class="progress mx-auto" data-value="65">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Microservices</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="60" class="progress-bar color-1" role="progressbar" style="width:60%"><span>60%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Microservices</h2>
+                <div class="progress mx-auto" data-value="72">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
@@ -759,52 +1059,76 @@
 
 <div class="page five resume-wrap" id="database">
     <h2 class="heading">Database Skills</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>MySQL</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="80" class="progress-bar color-1" role="progressbar" style="width:80%"><span>80%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">MySQL</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>MongoDB</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="75" class="progress-bar color-2" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">MongoDB</h2>
+                <div class="progress mx-auto" data-value="75">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>PostgreSQL</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="70" class="progress-bar color-3" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">PostgreSQL</h2>
+                <div class="progress mx-auto" data-value="72">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Supabase</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="65" class="progress-bar color-4" role="progressbar" style="width:65%"><span>65%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Supabase</h2>
+                <div class="progress mx-auto" data-value="68">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>SQL Basics</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="85" class="progress-bar color-5" role="progressbar" style="width:85%"><span>85%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">SQL Basics</h2>
+                <div class="progress mx-auto" data-value="90">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Database Design Concepts</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="70" class="progress-bar color-6" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Database Design Concepts</h2>
+                <div class="progress mx-auto" data-value="80">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -812,116 +1136,166 @@
 </div>
 
 <div class="page six resume-wrap" id="techskills">
-    <h2 class="heading">Langauge & others </h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Python</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="90" class="progress-bar color-1" role="progressbar" style="width:90%"><span>90%</span></div>
+    <h2 class="heading">Language & others</h2>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Python</h2>
+                <div class="progress mx-auto" data-value="92">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>JAVA</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="80" class="progress-bar color-2" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">JAVA</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>C/C++</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="75" class="progress-bar color-3" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">C/C++</h2>
+                <div class="progress mx-auto" data-value="88">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Streamilte</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="75" class="progress-bar color-3" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Streamlite</h2>
+                <div class="progress mx-auto" data-value="75">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Django</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="75" class="progress-bar color-3" role="progressbar" style="width:68%"><span>68%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Django</h2>
+                <div class="progress mx-auto" data-value="70">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"> <div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Machine Learning </h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="70" class="progress-bar color-4" role="progressbar" style="width:73%"><span>73%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Machine Learning</h2>
+                <div class="progress mx-auto" data-value="78">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                       
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Web3 & Blockchain</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="65" class="progress-bar color-6" role="progressbar" style="width:65%"><span>65%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Web3 & Blockchain</h2>
+                <div class="progress mx-auto" data-value="65">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Trading (Swings & options)</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="65" class="progress-bar color-6" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Trading (Swings & options)</h2>
+                <div class="progress mx-auto" data-value="82">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">82<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
 <div class="page seven resume-wrap" id="devconcepts">
     <h2 class="heading">Development Concepts & Tools</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Enaconda</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-1" role="progressbar" style="width:80%"><span>80%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Anaconda</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Android Studio</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar color-2" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Android Studio</h2>
+                <div class="progress mx-auto" data-value="75">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Git & VS Code</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar color-3" role="progressbar" style="width:90%"><span>90%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Git & VS Code</h2>
+                <div class="progress mx-auto" data-value="88">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">88<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Jupyter Notebook</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar color-4" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Jupyter Notebook</h2>
+                <div class="progress mx-auto" data-value="90">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>REST APIs</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="80" class="progress-bar color-5" role="progressbar" style="width:80%"><span>80%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">REST APIs</h2>
+                <div class="progress mx-auto" data-value="82">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">82<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -930,52 +1304,76 @@
 
 <div class="page eight resume-wrap" id="linuxskills">
     <h2 class="heading">Linux & Networking</h2>
-    <div class="row">
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Linux Fundamentals</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar color-1" role="progressbar" style="width:85%"><span>85%</span></div>
+    <div class="row progress-circle mb-5">
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Linux Fundamentals</h2>
+                <div class="progress mx-auto" data-value="85">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">85<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Bash Scripting</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="75" class="progress-bar color-2" role="progressbar" style="width:75%"><span>75%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Bash Scripting</h2>
+                <div class="progress mx-auto" data-value="75">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Nmap</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" class="progress-bar color-3" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Nmap</h2>
+                <div class="progress mx-auto" data-value="70">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Wireshark</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="65" class="progress-bar color-4" role="progressbar" style="width:65%"><span>65%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Wireshark</h2>
+                <div class="progress mx-auto" data-value="65">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">65<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Basic System Administration</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="70" class="progress-bar color-5" role="progressbar" style="width:70%"><span>70%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Basic System Administration</h2>
+                <div class="progress mx-auto" data-value="80">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6 animate-box">
-            <div class="progress-wrap ftco-animate">
-                <h3>Docker (Conceptual)</h3>
-                <div class="progress">
-                    <div aria-valuemax="100" aria-valuenow="60" class="progress-bar color-6" role="progressbar" style="width:60%"><span>60%</span></div>
+        <div class="col-lg-4 mb-4">
+            <div class="bg-white rounded-lg shadow p-4">
+                <h2 class="h5 font-weight-bold text-center">Docker (Conceptual)</h2>
+                <div class="progress mx-auto" data-value="72">
+                    <span class="progress-left"><span class="progress-bar border-primary"></span></span>
+                    <span class="progress-right"><span class="progress-bar border-primary"></span></span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h2 font-weight-bold">72<sup class="small">%</sup></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -984,7 +1382,113 @@
 
 </div>
 </div>
+</div>
 </section>
+<!--------------------------------------------------------------------------------->
+
+<section class="ftco-section projects-section" id="projects-section">
+<div class="container-fluid px-md-5">
+<div class="row justify-content-center py-5 mt-5">
+<div class="col-md-12 heading-section text-center ftco-animate">
+<h1 class="big big-2">Projects</h1>
+
+<h2 class="mb-4">My Recent Projects</h2>
+
+<p>A collection of my professional and personal projects with links to demos and code.</p>
+</div>
+</div>
+
+<div class="container">
+    <div class="projects-cards-row">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <a href="https://rishabharaj.github.io/tokenized-stock-saarthi-/" target="_blank" class="project-card-link">
+                <div class="project-img-container">
+                    <img src="images/projects/project1.png" alt="Stock Saarthi" loading="lazy">
+                    <div class="project-overlay">
+                        <h3>Stock Saarthi</h3>
+                        <p>A project focused on converting stocks into tokenized stocks & integrated with MetaMask crypto-wallet.</p>
+                        <div class="project-text">View Demo</div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/rishabharaj/tokenized-stock-saarthi-" target="_blank" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">GitHub</a>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+            <a href="https://v0-full-stack-ai-website.vercel.app/" target="_blank" class="project-card-link">
+                <div class="project-img-container">
+                    <img src="images/projects/project2.png" alt="AgentSync" loading="lazy">
+                    <div class="project-overlay">
+                        <h3>AgentSync</h3>
+                        <p>A modern AI agent management platform that allows users to interact with various specialized AI agents for different tasks.</p>
+                        <div class="project-text">View Demo</div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/rishabharaj/AgentSync" target="_blank" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">GitHub</a>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+            <a href="https://rishabharaj.github.io/basic-projects/" target="_blank" class="project-card-link">
+                <div class="project-img-container">
+                    <img src="images/projects/project3.png" alt="Basic-projects" loading="lazy">
+                    <div class="project-overlay">
+                        <h3>Basic-projects</h3>
+                        <p>A collection of small and simple projects built using JavaScript, HTML, CSS, and Python.</p>
+                        <div class="project-text">View Demo</div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/rishabharaj/basic-projects" target="_blank" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">GitHub</a>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card">
+            <a href="https://indore-connect-2-0-jansunwai.vercel.app/" target="_blank" class="project-card-link">
+                <div class="project-img-container">
+                    <img src="images/projects/project4.png" alt="Indore Connect 2.0" loading="lazy">
+                    <div class="project-overlay">
+                        <h3>Indore Connect 2.0</h3>
+                        <p>A modern civic tech platform designed to streamline grievance redressal for Indore city.</p>
+                        <div class="project-text">View Demo</div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/rishabharaj/Indore-Connect-2.0---Jansunwai" target="_blank" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">GitHub</a>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 5 -->
+        <div class="project-card">
+            <a href="https://project-drishti-interactive-proposa.vercel.app/" target="_blank" class="project-card-link">
+                <div class="project-img-container">
+                    <img src="images/projects/project5.png" alt="Project Drishti" loading="lazy">
+                    <div class="project-overlay">
+                        <h3>Project Drishti</h3>
+                        <p>Uses AI and geospatial data to detect illegal construction and support smart city development in Indore.</p>
+                        <div class="project-text">View Demo</div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://github.com/rishabharaj/Project-Drishti---Interactive-Proposal" target="_blank" class="btn btn-primary btn-sm" onclick="event.stopPropagation();">GitHub</a>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
 <!--------------------------------------------------------------------------------->
 
 <section class="ftco-section" id="certificates-section">
@@ -1004,7 +1508,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>Introduction to Front-End Development</a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/CourseraFrontend.png" alt="Front-End Certificate" class="img-fluid">
+    <img src="images/certificates/CourseraFrontend.png" alt="Front-End Certificate" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1017,7 +1521,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>Appian AI application challenge Hackathon</a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/appianAIML.png" alt="Machine Learning Certificate" class="img-fluid">
+    <img src="images/certificates/appianAIML.png" alt="Machine Learning Certificate" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1030,7 +1534,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>Generative AI</a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/Coursera-GenAI.png" alt="Web Development Certificate" class="img-fluid">
+    <img src="images/certificates/Coursera-GenAI.png" alt="Web Development Certificate" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1045,7 +1549,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>Kali Linux </a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/kali-linux.png" alt="Linux Certificate" class="img-fluid">
+    <img src="images/certificates/kali-linux.png" alt="Linux Certificate" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1058,7 +1562,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>ilovehackathon web3 blockchain hackathon</a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/IloveHackthon.jpg" alt="Blockchain Certificate" class="img-fluid">
+    <img src="images/certificates/IloveHackthon.jpg" alt="Blockchain Certificate" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1071,7 +1575,7 @@
 <div class="desc certificate-card">
 <h3 class="mb-3"><a>Supervised ML: Regression and Classification</a></h3>
 <div class="certificate-img-container">
-    <img src="images/certificates/Coursera 0TJJCYCMJH7S_page-0001.png" alt="Supervised Machine Learning: Regression and Classification" class="img-fluid">
+    <img src="images/certificates/Coursera 0TJJCYCMJH7S_page-0001.png" alt="Supervised Machine Learning: Regression and Classification" class="img-fluid" loading="lazy">
     <div class="certificate-overlay">
         <div class="certificate-text">View Certificate</div>
     </div>
@@ -1222,16 +1726,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Beyond academics and work experience, I dedicate time to personal projects and skill development. My focus is on practical application of technology, particularly in automation, mobile development, and data analysis. I also enjoy helping others, such as assisting my brother with his YouTube anime content channel by advising on voice clarity and content scripting.</p>
 </div>
 </div>
-<div class="projects-cards-row">
-  <div class="project-card">
+<div class="achievements-cards-row">
+  <div class="achievements-card">
     <h3>IoT Project Ideas</h3>
     <p>Brainstormed and documented IoT-based projects like a Smart Home Device Control System and a Hospital Bed Monitoring System using Arduino, focusing on real-time updates and remote access to solve impactful problems.</p>
   </div>
-  <div class="project-card">
+  <div class="achievements-card">
     <h3>Mental Wellness & Peer Support</h3>
     <p>Actively engaged in supporting peers with mental wellness, offering a listening ear and guidance. Facilitated informal sessions on mental health awareness within college. Deepened understanding of human psychology through self-study of works like "The Laws of Human Nature" and "The Emotional Intelligence"</p>
   </div>
-  <div class="project-card">
+  <div class="achievements-card">
     <h3>YouTube Channel Support</h3>
     <p>Assist my brother with his YouTube anime content channel, focusing on improving voice clarity, video narration, content scripting, and vocal tone to enhance viewer engagement.</p>
   </div>
@@ -1249,10 +1753,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> --></div>
 </div>
 
-<div class="row d-flex contact-info mb-5">
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box text-center p-4 shadow">
-<div class="icon d-flex align-items-center justify-content-center"></div>
+<div class="row d-flex contact-info mb-5 justify-content-center">
+<div class="col-md-4 col-lg-2 d-flex ftco-animate">
+<div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
+<div class="icon d-flex align-items-center justify-content-center contact-icon">
+<span class="icon-map-marker"></span>
+</div>
 
 <div>
 <h3 class="mb-4">Address</h3>
@@ -1262,21 +1768,25 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box text-center p-4 shadow">
-<div class="icon d-flex align-items-center justify-content-center"></div>
+<div class="col-md-4 col-lg-2 d-flex ftco-animate">
+<div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
+<div class="icon d-flex align-items-center justify-content-center contact-icon">
+<i class="fab fa-discord"></i>
+</div>
 
 <div>
-<h3 class="mb-4">Contact Number</h3>
+<h3 class="mb-4">Discord</h3>
 
-<p><a href="tel://123456789">123456789</a></p>
+<p><a href="https://discord.com/users/rishabharaj">rishabharaj</a></p>
 </div>
 </div>
 </div>
 
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box text-center p-4 shadow">
-<div class="icon d-flex align-items-center justify-content-center"></div>
+<div class="col-md-4 col-lg-2 d-flex ftco-animate">
+<div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
+<div class="icon d-flex align-items-center justify-content-center contact-icon">
+<span class="icon-paper-plane"></span>
+</div>
 
 <div>
 <h3 class="mb-4">Email Address</h3>
@@ -1286,14 +1796,30 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 
-<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-<div class="align-self-stretch box text-center p-4 shadow">
-<div class="icon d-flex align-items-center justify-content-center"></div>
+<div class="col-md-4 col-lg-2 d-flex ftco-animate">
+<div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
+<div class="icon d-flex align-items-center justify-content-center contact-icon">
+<span class="icon-linkedin"></span>
+</div>
 
 <div>
 <h3 class="mb-4">linkedin</h3>
 
 <p><a href="https://www.linkedin.com/in/rishabharaj-sharma-57a7a8256" target="_blank">linkedin.com/in/rishabharaj-sharma</a></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 col-lg-2 d-flex ftco-animate">
+<div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
+<div class="icon d-flex align-items-center justify-content-center contact-icon">
+<span class="icon-github"></span>
+</div>
+
+<div>
+<h3 class="mb-4">GitHub</h3>
+
+<p><a href="https://github.com/rishabharaj" target="_blank">github.com/rishabharaj</a></p>
 </div>
 </div>
 </div>
@@ -1303,7 +1829,21 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <div class="show fullscreen" id="ftco-loader"><svg class="circular" height="48px" width="48px"> <circle class="path-bg" cx="24" cy="24" fill="none" r="22" stroke="#eeeeee" stroke-width="4"></circle> <circle class="path" cx="24" cy="24" fill="none" r="22" stroke="#F96D00" stroke-miterlimit="10" stroke-width="4"></circle> </svg></div>
-<script src="js/jquery.min.js"></script><script src="js/jquery-migrate-3.0.1.min.js"></script><script src="js/popper.min.js"></script><script src="js/bootstrap.min.js"></script><script src="js/jquery.easing.1.3.js"></script><script src="js/jquery.waypoints.min.js"></script><script src="js/jquery.stellar.min.js"></script><script src="js/owl.carousel.min.js"></script><script src="js/jquery.magnific-popup.min.js"></script><script src="js/aos.js"></script><script src="js/jquery.animateNumber.min.js"></script><script src="js/scrollax.min.js"></script><script src="js/main.js"></script>
+<!-- Critical scripts loaded first -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js" defer></script>
+<!-- Non-critical scripts loaded with defer to not block rendering -->
+<script src="js/jquery-migrate-3.0.1.min.js" defer></script>
+<script src="js/popper.min.js" defer></script>
+<script src="js/jquery.easing.1.3.js" defer></script>
+<script src="js/jquery.waypoints.min.js" defer></script>
+<script src="js/jquery.stellar.min.js" defer></script>
+<script src="js/owl.carousel.min.js" defer></script>
+<script src="js/jquery.magnific-popup.min.js" defer></script>
+<script src="js/aos.js" defer></script>
+<script src="js/jquery.animateNumber.min.js" defer></script>
+<script src="js/scrollax.min.js" defer></script>
+<script src="js/main.js" defer></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -1352,4 +1892,159 @@ document.addEventListener('DOMContentLoaded', function () {
     if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
 </script>
+<!-- Project Modal -->
+<div id="projectModal" class="modal-certificate">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="projectImg">
+</div>
+
+<script>
+// Get the modal for projects
+var projectModal = document.getElementById("projectModal");
+var projectModalImg = document.getElementById("projectImg");
+var projectCloseBtn = document.querySelector("#projectModal .close");
+
+// We don't need the modal functionality for projects anymore
+// since clicking on project cards now directly opens the demo
+// But keeping the code commented for reference
+/*
+document.addEventListener('DOMContentLoaded', function() {
+  var projectImgContainers = document.querySelectorAll("#projects-section .project-img-container");
+  
+  projectImgContainers.forEach(function(container) {
+    container.addEventListener('click', function() {
+      var img = this.querySelector('img');
+      projectModal.style.display = "block";
+      projectModalImg.src = img.src;
+    });
+  });
+  
+  // Close modal when clicking X
+  projectCloseBtn.onclick = function() {
+    projectModal.style.display = "none";
+  }
+  
+  // Close modal when clicking outside the image
+  window.onclick = function(event) {
+    if (event.target == projectModal) {
+      projectModal.style.display = "none";
+    }
+  }
+});
+*/
+
+// Prevent GitHub buttons from triggering the parent link
+document.addEventListener('DOMContentLoaded', function() {
+  var githubButtons = document.querySelectorAll('.project-footer .btn-primary');
+  githubButtons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+});
+</script>
+
+<script>
+// Script to replace all progress circles with simple check icons
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all remaining progress circle containers
+  var progressElements = document.querySelectorAll('.progress.mx-auto');
+  
+  progressElements.forEach(function(progressElement) {
+    // Get the parent box
+    var parentBox = progressElement.closest('.bg-white.rounded-lg.shadow');
+    
+    if (parentBox) {
+      // Update the box class from bg-white to skills-box
+      parentBox.classList.remove('bg-white');
+      parentBox.classList.add('skills-box');
+      
+      // Create a new icon container
+      var iconContainer = document.createElement('div');
+      iconContainer.className = 'skill-icon-container';
+      
+      // Replace the progress circle with the icon
+      progressElement.parentNode.replaceChild(iconContainer, progressElement);
+    }
+  });
+});
+</script>
+
+<style>
+/* Style for the skill check icons */
+.skill-icon-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.skill-check-icon {
+  font-size: 32px;
+  color: #3e64ff;
+  animation: pulse 2s infinite;
+}
+
+/* Style for skill boxes */
+.skills-box {
+  background: #f5efd9 !important; /* Match with other cards on the site */
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-height: 200px; /* Set consistent minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.skills-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Additional styling for skill boxes */
+.bg-white.rounded-lg.shadow {
+  transition: all 0.3s ease;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-white.rounded-lg.shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Enhanced contact icon hover effects */
+#contact-section .icon {
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+#contact-section .icon:hover, 
+#contact-section .contact-icon:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+  background: #2948a1 !important;
+}
+
+/* Specific style for the contact icons to ensure hover works */
+.contact-icon {
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.h5.font-weight-bold {
+  margin-bottom: 15px;
+}
+</style>
+
 </body></html>

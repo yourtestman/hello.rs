@@ -1,108 +1,6 @@
-
-/* Style for the skill check icons */
-.skill-icon-container {
-    text-align: center;
-    margin-top: 4px;
-}
-
-.skill-check-icon {
-  font-size: 32px;
-  color: #3e64ff;
-  animation: pulse 2s infinite;
-}
-
-/* Style for skill boxes */
-.skills-box {
-        background: #f5efd9 !important; /* Match with other cards on the site */
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-        transition: transform 0.3s, box-shadow 0.3s;
-        min-height: 0; /* allow to shrink */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        height: auto; /* don't force fill */
-        padding: 6px 8px; /* tighter padding */
-        font-size: 1rem; /* smaller font */
-}
-
-/* Make headings inside skills boxes more compact */
-.skills-box h1,
-.skills-box h2,
-.skills-box h3,
-.skills-box h4,
-.skills-box h5,
-.skills-box h6 {
-    margin: 6px 0;
-    line-height: 1.25;
-}
-
-.skills-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.8; }
-}
-
-/* Additional styling for skill boxes */
-.bg-white.rounded-lg.shadow {
-  transition: all 0.3s ease;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-white.rounded-lg.shadow:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* Enhanced contact icon hover effects */
-#contact-section .icon {
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-#contact-section .icon:hover, 
-#contact-section .contact-icon:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
-  background: #2948a1 !important;
-}
-
-/* Specific style for the contact icons to ensure hover works */
-.contact-icon {
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-/* Make the icon animate even when hovering anywhere on the card */
-#contact-section .box:hover .icon,
-#contact-section .box:hover .contact-icon {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
-    background: #2948a1 !important;
-}
-
-.h5.font-weight-bold {
-  margin-bottom: 15px;
-}
-
-
-
-
-
 /* Force smaller skill boxes */
-
 .skills-box {
-  min-height: 60px !important;
+  min-height: 0 !important;
   padding: 4px 6px !important;
   font-size: 0.95rem !important;
   border-radius: 8px !important;
@@ -111,13 +9,18 @@
 /* When Bootstrap padding utility is present, override it for skills boxes */
 .skills-box.p-4,
 .skills-box .p-4 {
-  padding: 6px 8px !important;
+  padding: 2px 4px !important;
 }
 
 /* Compact box heading */
 .skills-box h2 {
-  font-size: 1.05rem !important;
+  font-size: 0.98rem !important;
   margin: 6px 0 !important;
+}
+
+/* Reduce spacing between grid items in the Skills section */
+.progress-circle .col-lg-4.mb-4 { 
+  margin-bottom: 12px !important; 
 }
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)

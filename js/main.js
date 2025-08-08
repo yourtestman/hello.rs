@@ -1,20 +1,7 @@
- AOS.init({
- 	duration: 800,
- 	easing: 'slide'
- });
-
+// Lightweight main script: remove parallax, popups, and heavy animations
 (function($) {
 
 	"use strict";
-
-	$(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
 
 
 	var fullHeight = function() {
@@ -27,18 +14,7 @@
 	};
 	fullHeight();
 
-	// loader
-	var loader = function() {
-		setTimeout(function() { 
-			if($('#ftco-loader').length > 0) {
-				$('#ftco-loader').removeClass('show');
-			}
-		}, 1);
-	};
-	loader();
-
-	// Scrollax
-   $.Scrollax();
+	// no-op loader & scrollax removed for performance
 
 
 
@@ -83,31 +59,7 @@
 	onePageClick();
 	
 
-	var carousel = function() {
-		$('.home-slider').owlCarousel({
-	    loop:true,
-	    autoplay: true,
-	    margin:0,
-	    animateOut: 'fadeOut',
-	    animateIn: 'fadeIn',
-	    nav:false,
-	    autoplayHoverPause: false,
-	    items: 1,
-	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
-	    responsive:{
-	      0:{
-	        items:1
-	      },
-	      600:{
-	        items:1
-	      },
-	      1000:{
-	        items:1
-	      }
-	    }
-		});
-	};
-	carousel();
+	// carousel removed (not used)
 
 	$('nav .dropdown').hover(function(){
 		var $this = $(this);
@@ -133,157 +85,30 @@
 	  console.log('show');
 	});
 
-	// scroll
-	var scrollWindow = function() {
-		$(window).scroll(function(){
-			var $w = $(this),
-					st = $w.scrollTop(),
-					navbar = $('.ftco_navbar'),
-					sd = $('.js-scroll-wrap');
-
-			if (st > 150) {
-				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
-				}
-			} 
-			if (st < 150) {
-				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
-				}
-			} 
-			if ( st > 350 ) {
-				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
-				}
-				
-				if(sd.length > 0) {
-					sd.addClass('sleep');
-				}
-			}
-			if ( st < 350 ) {
-				if ( navbar.hasClass('awake') ) {
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				}
-				if(sd.length > 0) {
-					sd.removeClass('sleep');
-				}
-			}
-		});
-	};
-	scrollWindow();
+	// simplify navbar scroll state
+	$(window).on('scroll', function(){
+		var st = $(this).scrollTop();
+		var navbar = $('.ftco_navbar');
+		if (st > 150) navbar.addClass('scrolled'); else navbar.removeClass('scrolled sleep');
+		if (st > 350) navbar.addClass('awake'); else navbar.removeClass('awake');
+	});
 
 	
 
-	var counter = function() {
-		
-		$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
-
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-						console.log(num);
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
-
-		} , { offset: '95%' } );
-
-	}
-	counter();
+	// counter & waypoints removed
 
 
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.ftco-animate').waypoint( function( direction ) {
+	// content waypoint animations removed
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
-				i++;
-
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
-
-					$('body .ftco-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn ftco-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft ftco-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight ftco-animated');
-							} else {
-								el.addClass('fadeInUp ftco-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
-					});
-					
-				}, 100);
-				
-			}
-
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
-
-	// magnific popup
-	$('.image-popup').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
-    }
-  });
-
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-
-    fixedContentPos: false
-  });
+	// magnific popup removed
 
 
-  var goHere = function() {
-
-		$('.mouse-icon').on('click', function(event){
-			
-			event.preventDefault();
-
-			$('html,body').animate({
-				scrollTop: $('.goto-here').offset().top
-			}, 500, 'easeInOutExpo');
-			
-			return false;
-		});
-	};
-	goHere();
+	// smooth scroll to section
+	$('.mouse-icon').on('click', function(event){
+		event.preventDefault();
+		$('html,body').animate({ scrollTop: $('.goto-here').offset().top }, 500);
+		return false;
+	});
 
 	// $("#myScrollspy").scrollspy({ offset: -75 });
 
@@ -340,10 +165,10 @@ window.onload = function() {
     }
   }
   // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+	document.body.appendChild(css);
 };
 
 
@@ -358,7 +183,7 @@ window.onload = function() {
 // this makes the height of each page equal to the height of the window
 // $('.page').css('height', $( window ).height());
 
-// scrollspy section
+// scrollspy section (lightweight)
 (function($){
   //variable that will hold the href attr of the links in the menu
   var sections = [];
@@ -371,8 +196,8 @@ window.onload = function() {
     //prevent the page from refreshing
     e.preventDefault();
     //set the top offset animation and speed
-    $('html, body').animate({
-      scrollTop: $($(this).attr('href')).offset().top - 180
+		$('html, body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 180
 },500);
     hash($(this).attr('href'));
   });
@@ -432,11 +257,31 @@ $(function() {
 
   })
 
-  function percentageToDegrees(percentage) {
+	function percentageToDegrees(percentage) { return percentage / 100 * 360 }
 
-    return percentage / 100 * 360
+});
 
-  }
-
+// Script to replace all progress circles with simple check icons
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all remaining progress circle containers
+  var progressElements = document.querySelectorAll('.progress.mx-auto');
+  
+	progressElements.forEach(function(progressElement) {
+    // Get the parent box
+    var parentBox = progressElement.closest('.bg-white.rounded-lg.shadow');
+    
+    if (parentBox) {
+      // Update the box class from bg-white to skills-box
+      parentBox.classList.remove('bg-white');
+      parentBox.classList.add('skills-box');
+      
+      // Create a new icon container
+      var iconContainer = document.createElement('div');
+      iconContainer.className = 'skill-icon-container';
+      
+      // Replace the progress circle with the icon
+      progressElement.parentNode.replaceChild(iconContainer, progressElement);
+    }
+  });
 });
 

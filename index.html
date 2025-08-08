@@ -5,39 +5,18 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com"  crossorigin>
-	<!-- Critical CSS for initial rendering -->
-	<link rel="preload" href="css/style.css" as="style">
-	<link href="css/style.css" rel="stylesheet">
-	<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" as="style">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-	<link rel="preload" href="css/open-iconic-bootstrap.min.css" as="style">
-	<link href="css/open-iconic-bootstrap.min.css" rel="stylesheet">
-	
-	<!-- Non-critical CSS loaded asynchronously -->
-	<link href="css/animate.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/owl.carousel.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/owl.theme.default.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/magnific-popup.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/ionicons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/flaticon.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/icomoon.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/custom-progress.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link href="css/font-awesome.css" rel="stylesheet" media="print" onload="this.media='all'">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-	<noscript>
-		<link href="css/animate.css" rel="stylesheet">
-		<link href="css/owl.carousel.min.css" rel="stylesheet">
-		<link href="css/owl.theme.default.min.css" rel="stylesheet">
-		<link href="css/magnific-popup.css" rel="stylesheet">
-		<link href="css/aos.css" rel="stylesheet">
-		<link href="css/ionicons.min.css" rel="stylesheet">
-		<link href="css/flaticon.css" rel="stylesheet">
-		<link href="css/icomoon.css" rel="stylesheet">
-		<link href="css/custom-progress.css" rel="stylesheet">
-		<link href="css/font-awesome.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	</noscript><!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4CS5V71Y2"></script><script>
+    <!-- Critical CSS for initial rendering -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Streamlined Google Fonts (fewer weights, display swap) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <!-- Single icon set: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript><!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z4CS5V71Y2"></script><script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
@@ -471,23 +450,7 @@
 			color: #f5efd9;
 		}
 		
-		.contact-section .box p {
-			font-size: 0;
-			height: 0;
-			margin: 0;
-			padding: 0;
-			line-height: 0;
-		}
-		
-		.contact-section .box p a {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-		}
+        /* Contact card text visible; use Bootstrap stretched-link for full-card click */
 		
 		#projects-section:not(.projects-section) .project-card:hover {
 			box-shadow: 0 12px 32px rgba(0,0,0,0.16);
@@ -571,7 +534,7 @@
 </ul>
 
 <div class="text">
-<p class="mb-4"><span class="number" data-number="3">0</span> <span>+ Hackathon Achievements & Projects</span></p>
+<p class="mb-4"><span class="number" data-number="3">4</span> <span>+ Hackathon Achievements & Projects</span></p>
 
 <p><a class="btn btn-primary py-3 px-3" href="https://drive.google.com/file/d/1BJigN4UgJ340bJsA2SYXiGG5QrqPfTm3/view?usp=sharing">Download CV</a></p> <!-- Replace [Your CV Link] with the actual link to the CV -->
 </div>
@@ -1735,13 +1698,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="col-md-4 col-lg-2 d-flex ftco-animate">
 <div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
 <div class="icon d-flex align-items-center justify-content-center contact-icon">
-<span class="icon-map-marker"></span>
+<i class="fa-solid fa-location-dot"></i>
 </div>
 
 <div>
 <h3 class="mb-4">Address</h3>
-
-<p>Indore, India</p>
+<a class="stretched-link" href="https://www.google.com/maps/place/Indore,+Madhya+Pradesh/@22.7103534,75.8396421,10z/data=!3m1!4b1!4m6!3m5!1s0x3962fce046a6ef85:0x16f4503902d82081!8m2!3d22.6489634!4d75.8069082!16zL20vMDk1cXJz?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D" aria-label="Address"></a>
 </div>
 </div>
 </div>
@@ -1754,8 +1716,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div>
 <h3 class="mb-4">Discord</h3>
-
-<p><a href="https://discord.com/users/rishabharaj">rishabharaj</a></p>
+<a class="stretched-link" href="https://discord.com/users/rishabharaj" target="_blank" rel="noopener" aria-label="Discord"></a>
 </div>
 </div>
 </div>
@@ -1763,13 +1724,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="col-md-4 col-lg-2 d-flex ftco-animate">
 <div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
 <div class="icon d-flex align-items-center justify-content-center contact-icon">
-<span class="icon-paper-plane"></span>
+<i class="fa-solid fa-paper-plane"></i>
 </div>
 
 <div>
 <h3 class="mb-4">Email Address</h3>
-
-<p><a href="mailto:rishabharaj4you@gmail.com">rishabharaj4you@gmail.com</a></p>
+<a class="stretched-link" href="mailto:rishabharaj4you@gmail.com" aria-label="Email"></a>
 </div>
 </div>
 </div>
@@ -1777,13 +1737,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="col-md-4 col-lg-2 d-flex ftco-animate">
 <div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
 <div class="icon d-flex align-items-center justify-content-center contact-icon">
-<span class="icon-linkedin"></span>
+<i class="fa-brands fa-linkedin-in"></i>
 </div>
 
 <div>
 <h3 class="mb-4">linkedin</h3>
 
-<p><a href="https://www.linkedin.com/in/rishabharaj-sharma-57a7a8256" target="_blank">linkedin.com/in/rishabharaj-sharma</a></p>
+<a class="stretched-link" href="https://www.linkedin.com/in/rishabharaj-sharma-57a7a8256" target="_blank" rel="noopener" aria-label="LinkedIn"></a>
 </div>
 </div>
 </div>
@@ -1791,13 +1751,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="col-md-4 col-lg-2 d-flex ftco-animate">
 <div class="align-self-stretch box text-center p-4 shadow" style="position: relative;">
 <div class="icon d-flex align-items-center justify-content-center contact-icon">
-<span class="icon-github"></span>
+<i class="fa-brands fa-github"></i>
 </div>
 
 <div>
 <h3 class="mb-4">GitHub</h3>
 
-<p><a href="https://github.com/rishabharaj" target="_blank">github.com/rishabharaj</a></p>
+<a class="stretched-link" href="https://github.com/rishabharaj" target="_blank" rel="noopener" aria-label="GitHub"></a>
 </div>
 </div>
 </div>
@@ -1806,21 +1766,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </section>
 
-<div class="show fullscreen" id="ftco-loader"><svg class="circular" height="48px" width="48px"> <circle class="path-bg" cx="24" cy="24" fill="none" r="22" stroke="#eeeeee" stroke-width="4"></circle> <circle class="path" cx="24" cy="24" fill="none" r="22" stroke="#F96D00" stroke-miterlimit="10" stroke-width="4"></circle> </svg></div>
-<!-- Critical scripts loaded first -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js" defer></script>
-<!-- Non-critical scripts loaded with defer to not block rendering -->
-<script src="js/jquery-migrate-3.0.1.min.js" defer></script>
+<!-- Core scripts only (deferred) -->
+<script src="js/jquery.min.js" defer></script>
 <script src="js/popper.min.js" defer></script>
-<script src="js/jquery.easing.1.3.js" defer></script>
-<script src="js/jquery.waypoints.min.js" defer></script>
-<script src="js/jquery.stellar.min.js" defer></script>
-<script src="js/owl.carousel.min.js" defer></script>
-<script src="js/jquery.magnific-popup.min.js" defer></script>
-<script src="js/aos.js" defer></script>
-<script src="js/jquery.animateNumber.min.js" defer></script>
-<script src="js/scrollax.min.js" defer></script>
+<script src="js/bootstrap.min.js" defer></script>
 <script src="js/main.js" defer></script>
 
 <script>
@@ -1870,81 +1819,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (textArray.length) setTimeout(type, newTextDelay + 250);
 });
 </script>
-<!-- Project Modal -->
-<div id="projectModal" class="modal-certificate">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="projectImg">
-</div>
-
+<!-- Prevent nested button clicks from triggering parent links -->
 <script>
-// Get the modal for projects
-var projectModal = document.getElementById("projectModal");
-var projectModalImg = document.getElementById("projectImg");
-var projectCloseBtn = document.querySelector("#projectModal .close");
-
-// We don't need the modal functionality for projects anymore
-// since clicking on project cards now directly opens the demo
-// But keeping the code commented for reference
-/*
 document.addEventListener('DOMContentLoaded', function() {
-  var projectImgContainers = document.querySelectorAll("#projects-section .project-img-container");
-  
-  projectImgContainers.forEach(function(container) {
-    container.addEventListener('click', function() {
-      var img = this.querySelector('img');
-      projectModal.style.display = "block";
-      projectModalImg.src = img.src;
-    });
-  });
-  
-  // Close modal when clicking X
-  projectCloseBtn.onclick = function() {
-    projectModal.style.display = "none";
-  }
-  
-  // Close modal when clicking outside the image
-  window.onclick = function(event) {
-    if (event.target == projectModal) {
-      projectModal.style.display = "none";
-    }
-  }
-});
-*/
-
-// Prevent GitHub buttons from triggering the parent link
-document.addEventListener('DOMContentLoaded', function() {
-  var githubButtons = document.querySelectorAll('.project-footer .btn-primary');
-  githubButtons.forEach(function(button) {
-    button.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  });
-});
-</script>
-
-<script>
-// Script to replace all progress circles with simple check icons
-document.addEventListener('DOMContentLoaded', function() {
-  // Find all remaining progress circle containers
-  var progressElements = document.querySelectorAll('.progress.mx-auto');
-  
-  progressElements.forEach(function(progressElement) {
-    // Get the parent box
-    var parentBox = progressElement.closest('.bg-white.rounded-lg.shadow');
-    
-    if (parentBox) {
-      // Update the box class from bg-white to skills-box
-      parentBox.classList.remove('bg-white');
-      parentBox.classList.add('skills-box');
-      
-      // Create a new icon container
-      var iconContainer = document.createElement('div');
-      iconContainer.className = 'skill-icon-container';
-      
-      // Replace the progress circle with the icon
-      progressElement.parentNode.replaceChild(iconContainer, progressElement);
-    }
-  });
+    document.querySelectorAll('.project-footer .btn-primary')
+        .forEach(function(btn){ btn.addEventListener('click', function(e){ e.stopPropagation(); }); });
 });
 </script>
 
@@ -2015,31 +1894,9 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* Enhanced contact icon hover effects */
-#contact-section .icon {
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
+#contact-section .icon { transition: all 0.3s ease !important; cursor: pointer !important; }
 #contact-section .icon:hover, 
-#contact-section .contact-icon:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
-  background: #2948a1 !important;
-}
-
-/* Specific style for the contact icons to ensure hover works */
-.contact-icon {
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-/* Make the icon animate even when hovering anywhere on the card */
-#contact-section .box:hover .icon,
-#contact-section .box:hover .contact-icon {
-    transform: translateY(-5px) !important;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
-    background: #2948a1 !important;
-}
+#contact-section .box:hover .icon { transform: translateY(-5px) !important; box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important; background: #2948a1 !important; }
 
 .h5.font-weight-bold {
   margin-bottom: 15px;

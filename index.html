@@ -1073,7 +1073,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="col-lg-4 mb-4">
             <div class="bg-white rounded-lg shadow p-4">
                 <h2 class="h5 font-weight-bold text-center">Superbase</h2>
@@ -2031,6 +2031,14 @@ document.addEventListener('DOMContentLoaded', function() {
 .contact-icon {
   transition: all 0.3s ease !important;
   cursor: pointer !important;
+}
+
+/* Make the icon animate even when hovering anywhere on the card */
+#contact-section .box:hover .icon,
+#contact-section .box:hover .contact-icon {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+    background: #2948a1 !important;
 }
 
 .h5.font-weight-bold {

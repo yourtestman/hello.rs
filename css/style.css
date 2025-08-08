@@ -1,3 +1,27 @@
+/* Force smaller skill boxes */
+.skills-box {
+  min-height: 0 !important;
+  padding: 4px 6px !important;
+  font-size: 0.95rem !important;
+  border-radius: 8px !important;
+}
+
+/* When Bootstrap padding utility is present, override it for skills boxes */
+.skills-box.p-4,
+.skills-box .p-4 {
+  padding: 2px 4px !important;
+}
+
+/* Compact box heading */
+.skills-box h2 {
+  font-size: 0.98rem !important;
+  margin: 6px 0 !important;
+}
+
+/* Reduce spacing between grid items in the Skills section */
+.progress-circle .col-lg-4.mb-4 { 
+  margin-bottom: 12px !important; 
+}
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
